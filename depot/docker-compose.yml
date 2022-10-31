@@ -1,9 +1,8 @@
 version: '3.9'
-services: 
-
+services:
   postgresql:
     image: postgres:10.21
-    environment: 
+    environment:
       - POSTGRES_PASSWORD=123
     ports:
       - 5432:5432
