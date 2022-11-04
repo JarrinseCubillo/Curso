@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Books</h1>
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.category %></td>
+        <td><%= book.year %></td>
+        <td><%= link_to 'Mostrar', book , {class: 'btn btn-primary'}%></td>
+        <td><%= link_to 'Editar', edit_book_path(book) ,{class: 'btn btn-success'}%></td>
+        <td><%= link_to 'Eliminar', book, method: :delete,class: 'btn btn-danger', data: { confirm: 'Esta seguro de eliminar?' }%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book', new_book_path, {class: 'btn btn-warning'} %>
