@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_11_04_214910) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.string "category"
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
